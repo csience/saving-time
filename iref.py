@@ -10,19 +10,20 @@ Notes:  Pythonista 3 by OMZ-Software required to use included requests and appex
 import requests
 import appex
 
-
 def main():
     if not appex.is_running_extension():
         print('This script is intended to be run from the sharing extension.')
-        return
-    url = appex.get_url()
-    if not url:
-        print('No input URL found.')
         return
     # My bit.ly access token for https://a.ref.sh/ for demonstration purposes. Change this value for your use.
     ACCESS_TOKEN = "c946a815f11eec030dea06056c146115102c1d1d"
     url = "https://api-ssl.bitly.com/v3/shorten"
     querystring = {"access_token": ACCESS_TOKEN}
+
+    appurl = appex.get_url()
+    if not appurl:
+        print('No input URL found.')
+        return
+    querystring["longUrl"] = appurl
 
     # HTTP header(s)
     headers = {
@@ -41,7 +42,6 @@ def main():
 
     except ValueError:
         print('JSON decoding failed.')
-
 
 if __name__ == '__main__':
     main()
