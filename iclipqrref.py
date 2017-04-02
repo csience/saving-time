@@ -31,7 +31,8 @@ def main():
     }
 
     # GET HTTP request to bit.ly API stored in requests.request object
-    response = requests.request("GET", url, headers=headers, params=querystring)
+    response = ri
+    hequests.request("GET", url, headers=headers, params=querystring)
 
     # decode as JSON formatted text from requests.request object to dict
     try:
