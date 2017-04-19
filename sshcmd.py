@@ -4,7 +4,6 @@ import threading
 import paramiko
 import subprocess
 
-
 def ssh_command(ip, user, passwd, command):
     client = paramiko.SSHClient()
     # client.load_host_keys('~/.ssh/known_hosts')
@@ -17,7 +16,6 @@ def ssh_command(ip, user, passwd, command):
         ssh_session.recv(1024)
     return
 
-
 def main():
     ip = raw_input('IP Address:')
     user = raw_input('Username:')
@@ -26,7 +24,6 @@ def main():
 
     # ssh_command('192.168.1.122', 'michael', 'password@!@#', 'id')
     ssh_command(ip, user, passwd, command)
-
 
 if __name__ == "__main__":
     main()
