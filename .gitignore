@@ -1,0 +1,12 @@
+.DS_STORE
+
+# udp_client.py
+
+# Virtualenv related
+bin/
+include/
+pip-selfcheck.json
+
+lib/
+.Python
+
